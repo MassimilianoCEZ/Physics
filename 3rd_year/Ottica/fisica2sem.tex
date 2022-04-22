@@ -1,0 +1,326 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[german,italian]{babel}
+\usepackage{fancyhdr}
+
+
+\textwidth16cm \textheight24cm \topmargin0mm \headheight0mm
+\headsep5mm \oddsidemargin0mm \evensidemargin0mm
+\parindent0mm
+
+
+
+
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{dsfont}
+\usepackage{fullpage}
+\usepackage{amssymb}
+\usepackage{tikz,pgfplots}
+\usepackage{cancel}
+\usepackage{lmodern}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{theorem}
+\usepackage{psfrag}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%\newcommand{\Lim}{\displaystyle\lim}
+%\newcommand{\Sum}{\sum\limits}
+
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    pdftitle={Fourier Analysis Documentation},
+    pdfpagemode=FullScreen,
+}
+
+
+
+
+\begin{document}
+
+
+
+
+\title{Fisica}
+
+\author{Massimiliano Ferrulli}
+\date{05.03.2022}
+
+
+
+\maketitle
+
+\section*{Fisica secondo anno}
+Ottica
+
+\pagebreak
+
+
+
+
+\tableofcontents
+
+
+
+
+
+\pagebreak
+
+
+\section{Diffrazione}
+
+Quando le onde colpiscono il bordo di una superficie, o un ostacolo o un'apertura di dimensione simile a quella di \(  \lambda \), la direzione di propagazione di tali onde si disperde e le onde sono soggette a interferenza. Ciò non è altro che diffrazione.
+
+\subsection{Diffrazione da singola fenditura non puntiforme}
+
+Consideriamo un'onda con lunghezza d'onda \( \lambda \) difratta da una lunga fenditura sottile di larghezza \textit{a}, proiettata su uno schermo opaco \textit{B}.
+
+\vspace{1mm}
+
+\begin{minipage}{8cm}
+    \includegraphics[scale=0.35]{Primominimo.jpg}
+    \end{minipage}
+    \begin{minipage}{8cm}
+    Lo stesso può essere fatto con l'altro minimo.
+    \end{minipage}
+
+    \vspace{2mm}
+
+e con l'approssimazione \(  D >> a \) possiamo ottenere la differenza di percorso dei due raggi:
+
+\begin{center}
+    \begin{minipage}{8cm}
+    \includegraphics[scale=0.35]{Approssimazione.jpg}
+    \end{minipage}
+
+    \vspace{2mm}
+\end{center}
+
+sappiamo che la differenza di percorso di due raggi è \( n  \frac{\lambda}{2} \) allora l'interferenza sarà completamente distruttiva.
+\pagebreak
+
+Per il primo minimo:
+\begin{center}
+\[
+    \frac{a}{2} \sin(\theta) = \frac{\lambda}{2} \to a sin(\theta) = \lambda
+\]
+\end{center}
+
+cosa succede se riduciamo l'apertura:
+
+$\bullet$ se \(  a > \lambda  \)  e stringiamo la fenditura mentre \( \lambda \) rimane costante, l'ampiezza dell'angolo aumenta essendo che se \( a \downarrow sin(\theta) \uparrow \text{e dunque} \, \theta \uparrow    \)
+
+$\bullet$ se \(  a = \lambda  \) allora \( \theta = \frac{\pi}{2} \) che è l'angolo delle prime frange scure, vuole dire che il massimo centrale si espande su tutto lo schermo in quanto i minimi di primo ordine delimitano questa fascia bianca.
+
+
+Secondo minimo: 
+
+
+
+
+\begin{minipage}{8cm}
+    \includegraphics[scale=0.2]{secondominimononapp.jpg}
+    \end{minipage}
+    \begin{minipage}{8cm}
+    Lo stesso può essere fatto con l'altro minimo.
+    \end{minipage}
+
+    \vspace{2mm}
+
+e con l'approssimazione \(  D >> a \) possiamo ottenere la differenza di percorso dei due raggi:
+
+
+    \begin{minipage}{8cm}
+    \includegraphics[scale=0.2]{secondominimo.jpg}
+    \end{minipage}
+    \begin{minipage}{8cm}
+        \[
+            \frac{a}{4} \sin(\theta) = \frac{\lambda}{2} \, \to \, a sin(\theta) = 2 \lambda   
+        \]
+        \end{minipage}
+    \vspace{2mm}
+
+generalizzando la posizione dei minimi sarà:
+
+\begin{center}
+    \[
+    a sin(\theta) = m \lambda \, \, \text{con} \, \, m = 1, 2, 3, ...
+    \]
+\end{center}
+
+
+
+\pagebreak
+
+se noi vediamo un massimo centrale è dovuto all'equazione:
+
+
+\begin{center}
+    \[
+    \vert R_2 - R_1 \vert = m \lambda \, \, \text{e nel minimo centrale i due raggi hanno la stessa lunghezza e dunque:}
+    \]
+\end{center}
+\begin{center}
+    \[
+            \forall \lambda \, \, \text{abbiamo un massimo}
+    \]
+
+\end{center}
+
+
+Per ottenere i massimi possiamo dividere la fenditura in un numero di volte n dispari. immaginiamoci di dividere la fenditura in 3 e che dalla fenditura si generino 99 fenditure, I raggi provenient dall'intervallo 1-33 e 34-66 saranno in controfase mentre il rimanente \( \frac{1}{3}  \) sarà in fase dato che la luce originaria lo era.
+
+Ciò ci porta a imporre la condizione per cui i raggi provenienti da due intervalli vicini si annullino:
+
+\begin{center}
+    \[
+    \frac{a}{3} sin(\theta) = \frac{\lambda}{2}   
+    \]
+\end{center}
+
+\begin{center}
+    \[
+    a sin(\theta) = (m + \frac{1}{2}) \lambda \, , \, m = 1,2,3...  
+    \]
+\end{center}
+
+
+
+
+\subsection{Intensità delle frange da interferenza di due fenditure puntiformi }
+
+
+Scriviamo le due equazioni dei raggi:
+
+\[
+S_1(x,t) = Sm \,sin(kx-wt) 
+\]
+\[
+S_2(x,t) = Sm \,sin(kx-wt + \varphi) \, \, \varphi = \text{Differenza di percorso}
+\]
+l'onda risultante sarà:
+\[
+2 sm \, sin(kx-wt) cos(- \frac{\varphi}{2})    
+\]
+
+ricordando che: 
+
+
+\[
+I \propto A^2
+\]
+
+\[
+I=4 I_0 \cos^2(\frac{\varphi}{2}) \, \, \textit{dove} \, \, Sm^2 = I_o
+\]
+
+\[
+\text{Max:} \varphi = 2k\pi \, \, \text{Min:} \varphi = (2k -1)\pi    
+\]
+
+\pagebreak
+
+da ciò otteniamo che :
+
+\begin{center}
+    \[ 
+    \frac{\varphi}{2 \pi} = \frac{\Delta  L}{\lambda} \, \to \, \varphi = \frac{2 \pi}{\lambda} d sin(\theta)
+    \]
+\end{center}
+
+\[
+\frac{\cancel{2\pi}}{\lambda} d sin(\theta) = \cancel{2} k \cancel{\pi}
+\]
+\[
+sin(\theta) d = k \lambda    
+\]
+dimostrazione dell'approssimazione vista precedentemente a livello geometrico
+
+\vspace{4mm}
+
+\[
+\text{grafico di} I=4 I_0 \cos^2(\frac{\varphi}{2})
+\]
+\begin{center}
+    
+\begin{minipage}{15cm}
+    \includegraphics[scale=0.35]{yi.jpg}
+    \end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}{10cm}
+    \includegraphics[scale=0.8]{Screenshot_1.png}
+    \end{minipage}
+\end{center}
+
+\subsection{Intensità delle frange della diffrazione da singola fenditura }
+
+\begin{center}
+    
+
+\begin{minipage}{8cm}
+    \includegraphics[scale=0.08]{20220305_171402.jpg}
+    \end{minipage}
+\end{center}
+
+
+
+
+\subsection{Interferenza da doppia fenditura non puntiforme }
+
+\begin{center}  
+\begin{minipage}{15cm}
+    \includegraphics[scale=0.6]{diffr512a (0-00-00-00).jpg}
+    \end{minipage}
+\end{center}
+
+
+\[
+    I_\text{interferenza} = 4I_0 \, cos^2(\frac{\varphi}{2})
+\]
+\[
+I_\text{diffrazione} = \frac{I_m \, sin^2(\frac{\varphi}{2})}{(\frac{\varphi}{2})^2}    
+\]
+se \( \varphi = \frac{2\pi}{\lambda} a \, sin(\theta)\)
+
+\begin{center}
+\[
+I_\text{diffrazione + interferenza}  = I_m \, cos^2 (\frac{\varphi_\text{interferenza}}{2}) * \frac{sin^2(\frac{\varphi_{diffrazione}}{2})}{(\frac{\varphi_{diffrazione}}{2})^2}
+\]
+\end{center}
+
+$\bullet$
+se ho una sola fenditura d = 0, dove d è la distanza dalle due fenditure e in questo caso:
+\[
+\varphi = 0 \, \, \text{dato che} \, \, \varphi = d \, sin(\theta) \frac{2\pi}{\lambda}    
+\]
+$\bullet$
+due fenditure puntiformi a = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
