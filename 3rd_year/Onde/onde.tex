@@ -1,0 +1,423 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[german,italian]{babel}
+\usepackage{fancyhdr}
+
+
+\textwidth16cm \textheight24cm \topmargin0mm \headheight0mm
+\headsep5mm \oddsidemargin0mm \evensidemargin0mm
+\parindent0mm
+
+
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{dsfont}
+\usepackage{fullpage}
+\usepackage{amssymb}
+\usepackage{tikz,pgfplots}
+\usepackage{cancel}
+\usepackage{lmodern}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{theorem}
+\usepackage{psfrag}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usepackage{background}
+\usepackage{keystroke}
+\usepackage{etoolbox}
+
+
+\makeatletter
+\patchcmd{\tableofcontents}{\@starttoc{toc}}{\hypertarget{totoc}{}\@starttoc{toc}}{}{}
+\makeatother
+
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{black}
+\SetBgPosition{current page.south}
+\SetBgVshift{20pt}
+\SetBgContents{\tikz[remember picture,overlay]
+    \node[inner sep=0pt] {\hyperlink{totoc}{\Return}};}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    pdftitle={titolo},
+    pdfpagemode=FullScreen,
+}
+
+
+
+
+\begin{document}
+
+
+
+
+\title{Materia}
+
+\author{Massimiliano Ferrulli}
+\date{Data}
+
+
+
+\maketitle
+
+\section*{argomento}
+spiegazione
+
+\pagebreak
+
+
+
+
+\tableofcontents
+
+
+
+
+
+\pagebreak
+
+
+
+
+
+\section{Onde Meccaniche}
+
+le onde meccaniche si propagano attraverso un mezzo e ne abbiamo due tipi: Le onde trasversali e le onde longitudinali.
+Le onde trasversali oscillando perpendicolarmente alla direzione di propagazione dell'onda, emntre le onde longitudinali (come dal nome), si propagano lungo la direzione della propagazione dell'onda.
+\\
+le onde sinusoidali che si propagano lungo l'asse x vengono descritte con l'equazione: 
+    \begin{center}
+    \[
+    y(x,t) = y_m \, \sin(kx \pm  \omega t)    
+    \]
+    \end{center}
+
+k è il numero d'onda angolare e \( \omega \) è la pulsazione. 
+\\
+\( \lambda\) è la lunghezza d'onda ed è la distanza tra due punti omologhi che si trovano al tempo t e \( t + T\) 
+\\
+il periodo T è l'intervallo di tempo dpo il quale l'onda si ripete.
+\\
+la frequenza è il numero di oscillazioni per unità di tempo compiute da un punto sulla corda. 
+
+    \begin{center}
+    \[
+    k = \frac{2 \pi}{\lambda}
+    \]
+    \end{center}
+
+    \begin{center}
+        \[
+        \frac{\omega}{2 \pi} = f = \frac{1}{T}   
+        \]
+    \end{center}
+
+    \begin{center}
+        \[
+        v = \frac{\omega}{k} = \frac{\lambda}{T} = \lambda f   
+        \]
+    \end{center}
+
+    come ricavare la velocità:
+
+    \( kx \pm wt\) = costante dato che l'elemento non conserva lo spostamento, ma un punto sulla corda si. Derivando:
+
+\begin{align*}
+   \frac{\partial^2 f}{\partial x \, \partial t} (kx - wt) &= k \frac{dx}{dt} - w = 0
+    \\
+    \frac{dx}{dt} = \frac{\omega}{k} &= \frac{\lambda}{T} = \lambda f
+\end{align*}
+ 
+\paragraph{Osservazione 1}
+Le onde elettromagnetiche non richiedono un mezzo materiale nel quale propagarsi e le onde di materia sono la natura ondulatoria di tutta la materia, inclusi gli atomi che compongono il corpo.
+
+\paragraph{Osservazione 2}
+nell'equazioen \(kx - wt\ = \text{costante} \) se t aumenta allora anche x aumenta, questo vuole dire che l'onda all'aumentare di t si propagherà lungo l'asse positivo di x. lo stesso ragionamento pu`oessere fatto per \(kx + wt\) dove evidentemente si muoverà verso le x negative. 
+
+\subsection{Velocità dell'onda lungo una corda tesa}
+
+\subsubsection{Analisi dimensionale}
+\begin{align*}
+    v &= \frac{L}{t} 
+    \\
+    \nu &= \frac{m}{l} \text{massa lineica}
+\end{align*}
+per inviare un'onda lungo una corda è necessario tenderla e l'onda propagandosi provoca ulteriori tensioni spostando gli elementi. si può associare la tensione \textit{t} all'elasticità di una corda. 
+la tensione \textit{t} è una forza. il problema di quest analisi è dovuto al fatto che essa non ci dà il valore di costanti adimensionali.
+
+\subsubsection{Deduzione dalla seconda legge di newtwon}
+consideriamo un pezzo di corda \( \Delta  l\) soggetto all'impulso che forma un arco di circonferenza di raggio \textit{R} e che sottende un angolo \(2 \theta\). la tensione agisce tangenzialmente su questo seguento da ambo le parti. le componenti orizzontali si annullano a vicenda e le componenti verticali si sommano formando una forza \textit{F} radiale. 
+\begin{align*}
+    F = 2 (\mathit{t} \sin(\theta) ) & \approx \mathit{t}  (2\theta) = \mathit{t} \frac{\Delta l}{R}  
+    \\
+    \Delta m &= \mu \Delta l
+\end{align*}
+siccome l'elemento di corda di sta muvoendo lungo una circonferenza, la sua accelerazione sarà:
+\begin{align*}
+a = \frac{v^2}{R}    
+\end{align*}
+
+quindi 
+
+\begin{align*}
+    F &= ma
+    \\
+    \left( \mathit{t} \frac{\Delta l}{R}\right) &= \left(\mu \Delta l\right) \left(\frac{v^2}{R}\right)
+\end{align*}
+
+
+
+\subsection{sovrapposizione delle onde}
+
+può capitare che due onde attraversino la stessa regione contemporaneamento. indichiamo gli spostamenti con \( y_1(x,t) \, \, y_2(x,t) \). lo spostamento (per esempio della corda), sarà la somma delle due:
+\begin{center}
+    \[
+      y \prime (x,t) = y_1(x,t) \, + \, y_2(x,t)    
+    \]
+\end{center}
+
+I principi sono dunque 2:
+\\
+\( \bullet \) onde sovrapposte si sommano algebricamente a formare un'onda risultante. \\
+\( \bullet \) onde sovrapposte non si disturbano a vicenda in alcun modo, si muovono uno attraverso l'altro.
+\subsection{Interferenza di Onde}
+    supponiamo di inviare due onde sinusoidali con la stessa lunghezza d'onda \(\lambda\) e la stessa ampiezza A
+    se esse si sovrappongono se sono esattamente in fase, si sommeranno fino a raddopiare lo spostamento prodotto da ogni singola onda, mentre se sono in controfase si annulleranno.
+    prendiamo le due onde:
+    \begin{align*}
+        y_1(x,t) =& y_m sin(kx - wt)
+        \\
+        y_2(x,t) =& y_m sin(kx - wt + \phi)
+        \\
+        y \prime (x,t) =&  y_m \left(sin(kx - wt) +  sin(kx - wt + \phi) \right)
+    \end{align*}
+grazie alle formule di prostaferesi:
+\begin{align*}
+    y \prime (x,t) =  2y_m \left( cos \left( \frac{1}{2}\phi \right) \right) sin \left(kx - wt + \frac{1}{2} \phi\right)
+    \\
+    \phi = 0 \Leftrightarrow y \prime (x,t) =  2y_m sin (kx - wt)
+    \\
+    \phi = \pm \pi \Leftrightarrow cos \left(\frac{1}{2}\phi \right) = 0 \text{quindi ampiezza sarà 0}
+\end{align*}
+
+L'onda risultante si propagherà nella stessa direzione delle due onde originarie. 
+
+\subsection{Onde stazionarie}
+\label{sec:OndeStazionarie}
+Quando due onde con la stessa lunghezza d'onda e la stessa ampiezza si muovono in versi opposti lungo una corda tesa, la loro interferenza genera un'onda stazionaria.
+
+\begin{align*}
+    y \prime (x,t) =&  y_m \left(sin(kx - wt) +  sin(kx + wt) \right)
+\end{align*}
+
+con prostaferesi: 
+
+\begin{align*}
+    y \prime (x,t) = \left( 2y_m \sin(kx) \right) \cos(wt)
+\end{align*}
+
+questa non è un'onda in moto in quanto non ha la forma \(\left(kx - wt\right)\).
+\\
+l'ampiezza sarà \(\left( 2y_m \sin(kx) \right)\) ma nel caso di un'onda in moto, l'ampiezza è la stessa per ogni elemento, mentre in un'onda stazionaria cambia in funzione di x.
+\\
+posizioni di minima ampiezza detti anche nodi:
+\begin{align*}
+    A = 0 \Leftrightarrow kx = n\pi \rightarrow n = 0,1,2...
+    \\
+    x = n \frac{\lambda}{2} \rightarrow n = 0,1,2...
+\end{align*}
+posizioni di massima aampiezza, cioè i ventri dell'onda stazionaria: 
+\begin{align*}
+    \left\lvert A \right\rvert = 1 \Leftrightarrow kx =& \left(n + \frac{1}{2}\right) \pi \rightarrow n = 0,1,2...
+    \\
+    k &= \frac{2\pi}{\lambda}
+    \\
+    \left\lvert A \right\rvert = 1 \Leftrightarrow x =& \left(n + \frac{1}{2}\right) \frac{\lambda}{2} \rightarrow n = 0,1,2...
+\end{align*}
+
+Per certe frequenze l'interferenza genera una figura di onde stazionarie con nodi e ventri e questo succede quando il sistema è in risonanza, a delle frequenze di risonanza. 
+Se le frequenze non sono di risonanza, allora non si formerà un onda stazionaria.
+\\
+Prendiamo come esempio una corda tesa tra due morsetti di distanza L. ci dovranno essere 2 nodi nei punti in cui viene tenuta fissa. 
+
+si può instaurare un'onda stazionaria su una corda di lunghezza \textit{L} se e solo se:
+\begin{align*}
+    \lambda = \frac{2L}{n} \rightarrow n = 0,1,2...
+    \\
+    \text{n è il numero di ventri} 
+    \\
+    f = \frac{v}{\lambda} = \frac{v}{2L} n \rightarrow n = 1,2,3.. 
+\end{align*}
+
+n è detto il numero armonico e l'insieme di tutti i possibili modi di oscilliazione è detto serie armoniche. 
+
+\subsubsection{Riflessioni ad un'estremità}
+si può ottenere un'onda stazionaria in una corda tesa lasciando che un'onda in moto sia riflessa dall'estremità della corda. Quando un impulso giunge all'estremità, esercita una forza verso il supporto (la parete). Secondo la terzaa legge di Newtwon (azioen e reazione), la parete esercita la medesima forza in verso opposto (quindi verso la corda).
+La forza genera un impuslo che viaaggia in verso opposto a quello originario. in questa riflessione rigida ci dovrà essere un nodo sul supporto perchè lì la corda è fissa. L'impulso incidente e quello riflesso sovranno avere segno opposto per annularsi l'un l'altro in quel punto. 
+
+
+\section{Onde Sonore }
+
+una qualsiasi onda longitudinale è definibile onda sonora. Una sorgente sonora, emette onde acustiche in tutte le direzioni. I raggi e i fronti d'onda indicano la direzione di propagazione e la loro diffusione. I fronti d'onda sono superfci sulle quali le oscillazioni dell'aria dovute all'onda acustica assumono lo stesso valore; queste superfci in disegni bidimensionali presentano l'aspetto di circonferenze o archi di circonferenza con centro sulla sorgente puntiforme. I raggi sono linee rette perpendicolari ai fronti d'onda che suggeriscono la direzione di avanzamento di questi.
+I fronti d'onda sono sferici e si diffondono in modo sferico, ma più si allontanano dal centro e più il raaggio aumenta fino a quando si possono approssimare a delle linee rette, in questo caso le onde si chiamano piane.
+\\
+deduciamo la formula per la velocità del suono:
+
+
+
+\subsection{Interferenza}
+Le equazioni delle onde longitudinali sono come quelle delle onde trasversali, ma usiamo la funzioen coseno. consideriamo due onde longitudinali di ugual ampiezza e lunghezza d'onda, ma con fase diversa:
+
+\begin{align*}
+    s_1(x,t) = s_m \cos(kx - \omega t) 
+     \\
+     s_2(x,t) = s_m \cos(kx - \omega t + \phi) 
+\end{align*}
+
+tali onde si sommano e interferiscono, l'onda risultante grazie a prostaferesi sarà:
+\begin{align*}
+    s' = 2s_m \cos \left(\frac{1}{2}\varphi\right) \cos\left(kx - wt + \frac{1}{2}\varphi\right)
+\end{align*}
+
+ la sua ampiezza sarà di modulo  \(\left\lvert 2s_m \cos \left(\frac{1}{2}\varphi\right) \right\rvert\) 
+
+la fase \(\varphi\) può essere data da due onde che non erano in fase originariamente oppure per via di una differenza di cammino \(\Delta L = \left\lvert L_2 - L_1\right\rvert  \). Ricordiamo che una differenza di fase di \(2\pi\) corrisponde ad una lunghezza d'onda. scriviamo dunque:
+\begin{align*}
+    \frac{\varphi}{2\pi} = \frac{\Delta L}{\lambda} \Leftrightarrow \varphi = \frac{\Delta L}{\lambda} 2\pi
+\end{align*}
+le onde subiscono un'interferenza completamente costruttiva quando \(\varphi = 0\) o un multiplo intero di \(2\pi\) 
+\begin{align*}
+    \varphi = m(2\pi ) \, \, \, m = 0,1,2... \Longleftrightarrow \frac{\Delta L}{\lambda} = 0,1,2...
+\end{align*}
+
+per un'interferenza distruttiva:
+
+\begin{align*}
+    \varphi = (2m+1)\pi \, \, \, m = 0,1,2... \Longleftrightarrow \frac{\Delta L}{\lambda} = 0.5,1.5,2.5 ...
+\end{align*}
+
+\subsection{Strumenti musicali}
+
+I suoni musicali si possono ottenre facendo oscillare corde, membrane, colonne d'aria e molti altri corpi. come visto nel capitolo \hyperref[sec:OndeStazionarie]{Onde Stazionarie} lungo una corda si possono instaurare delle onde stazionarie a patto che ci siano delle frequente di risonanza. In questi strumenti, grazie alle onde stazionarie, la corda oscilla con una grande ampiezza e periodicamente spinge l'aria circostante generando così un'onda sonora con la stessa frequenza delle oscillazioni della corda. 
+\\
+Possiamo creare onde sonore stazionarie in uno strumento a fiato. Le onde si riflettono a ogni estremità e ritornano indietro attraverso la canna.Per far si che ci sia un'onda stazionaria la lunghezza d'onda delle onde dovrà accordarsi con la lunghezza della canna. 
+\paragraph{Due estremità aperte}
+la forma più semplice è quella che si sviluippa in uno strumento a fiato avente entrambe le estremità aperte. a ogni estremità aperta corrisponde un ventre e vi è un nodo nella parte centrale dello strumento. Per la prima armonica le onde sonore in uno strumento a fiato du lunghezza \textit{L} devono avere una lunghezza d'onda data da \(L = \frac{\lambda}{2}\) , così che \(\lambda = 2L\).
+la seconda armonmica richiederà onde sonore di lugnhezza \(\lambda = L\), la terza \(\lambda = \frac{2L}{3}\). Generalizzando:
+\begin{align*}
+    \lambda = \frac{2L}{n} \rightarrow n = 1,2,3... 
+\end{align*}
+
+dove \textit{n} è il numero di nodi, il numero armonico. 
+\\
+Le frequenze \textit{f} di risonanza per una canna a estremità aperte sono quindi date da: 
+\begin{align*}
+    f = \frac{v}{\lambda} = \frac{nv}{2L} \rightarrow n = 1,2,3...
+\end{align*}
+\paragraph{Una estremità aperta}
+alcune odne stazionarie si possono formare in uno strumento a fiato con una sola estremità aperta. nell'estremità aperta si ha un ventre (altrimenti non sentiremmo nulla) e nell'estremità chiusa un nodo. le frequenze di risonanza in uno strumento di questo tipo di lunghezza \textit{L} corrispondono ad una lunghezza d'onda:
+\begin{align*}
+    \lambda = \frac{4L}{n} \rightarrow n = 1,3,5...
+\end{align*}
+
+Le frequenze \textit{f} di risonanza sono quindi date da: 
+\begin{align*}
+    f = \frac{v}{\lambda} = \frac{nv}{4L} \rightarrow n = 1,3,5...
+\end{align*}
+dove \hspace{2.5mm }\( n = \left( 2 \left(\text{numero nodi}\right) -1 \right) \)
+\\
+La seconda armonica \(n = 2\) non si può generare in questo tipo di strumento.
+
+\subsection{Battimenti}
+
+supponiamo che le variazioni temporali degli spostamenti dovuti alle onde sonore di ampiezza uguale siano:
+\begin{align}
+    s_1 = s_m \cos(\omega_1t)
+    \\
+    s_2 = s_m\cos(\omega_2t)
+\end{align}
+
+\(\omega_1 > \omega_2\). Secondo il principio di sovrapposizione, lo spostamento risultante È la somma dei due spostamenti e con prostaferesi:
+\begin{align*}
+    s = 2s_m \cos\left(\frac{1}{2} (\omega_1 - \omega_2) t  \right) \cos\left(\frac{1}{2} (\omega_1 + \omega_2) t  \right)
+\end{align*}
+se \(\omega' = \frac{1}{2} (\omega_1 - \omega_2)\) e \(\omega = \frac{1}{2} (\omega_1 + \omega_2) \) allora:
+\begin{align*}
+    s(t) = \left(2s_m \cos(\omega' t)\right) cos(\omega t)
+\end{align*}
+dove \(\omega' \) è la pulsazione dell'ampiezza e \(\omega\) è la pulsazione della funzione.
+\\
+supponiamo ora che \(\omega_1 \) e \(\omega_2\) siano quasi uguali, questo vorrebbe dire che \(\omega >> \omega'\). 
+\\ 
+la pulsazionme alla quale vengono i battimenti è:
+\begin{align*}
+    \omega_\text{batt} = 2\omega ' = 2 \frac{1}{2} (\omega_1 - \omega_2) = \omega_1 - \omega_2
+\end{align*}
+     e poichè \(\omega = 2\pi f \) 
+     \begin{align*}
+         f_\text{batt} = f_1 - f_2
+     \end{align*}
+
+ \subsection{Effetto doppler}
+Questo effetto si manifesta non solo con onde sonore ma anche con quelle elettromagnetiche. 
+\\ 
+Equazione generale:
+\begin{align*}
+    f' = f \frac{v \pm v_R}{v \pm v_S}
+\end{align*} 
+v è velocità del suono, \(v_R\) velocità rilevatore nell'aria \(v_S\) -velocità sorgente aria
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
