@@ -1,0 +1,310 @@
+%This is Massimiliano's latex template 
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fancyhdr}
+
+
+
+\usepackage[english,italian]{babel}
+
+
+\textwidth16cm \textheight24cm \topmargin0mm \headheight10mm
+\headsep5mm \oddsidemargin0mm \evensidemargin0mm
+\parindent0mm
+\usepackage{bettelini}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{dsfont}
+\usepackage{fullpage}
+\usepackage{amssymb}
+\usepackage{tikz,pgfplots}
+\usepackage{cancel}
+\usepackage{lmodern}
+\usepackage{gensymb}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{theorem}
+\usepackage{psfrag}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{wrapfig}  
+%\usepackage[all]{hypcap}
+\usepackage{keystroke}
+\usepackage{etoolbox}
+\usepackage{babel}
+\usepackage{siunitx}
+\usepackage{float}
+
+
+
+
+
+
+
+
+
+
+\usepackage[AMRA, 30]{masterfrontpage}
+
+\usepackage{blindtext}
+
+\usetikzlibrary{3d}
+
+
+\pgfplotsset{
+  compat=1.13,
+}
+
+\makeatletter
+\patchcmd{\tableofcontents}{\@starttoc{toc}}{\hypertarget{totoc}{}\@starttoc{toc}}{}{}
+\makeatother
+
+\usepackage{fancyvrb}
+
+
+
+
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{references.bib}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    pdftitle={Lavoro per il Concorso nazionale di Scienza e gioventù},
+    pdfpagemode=FullScreen,
+}
+\VerbatimFootnotes
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+
+
+
+
+% #1    x coordinate.
+\newcommand{\vandbarrier}[1]{
+    \node[scale = 0.5] at (#1, 0.5) {\text{(Barriera)}};%
+}
+
+% #1    x coordinate.
+\newcommand{\vabove}[1]{%
+    \node[anchor = south] at (#1, 2) {\scriptsize $V = \infty$};%
+}
+
+
+
+
+\usetikzlibrary{decorations.pathmorphing,decorations.markings,calc} % for random steps & snake
+\usetikzlibrary{arrows.meta} % for arrow size
+\tikzset{>=latex} % for LaTeX arrow head
+\tikzstyle{radiation}=[-{Latex[length=2,width=1.5]},red!95!black!50,opacity=0.7,very thin,decorate,
+                       decoration={snake,amplitude=0.7,segment length=2,post length=2}]
+
+
+
+
+
+
+\tikzset{>=latex}
+
+
+
+
+
+          \pgfdeclareverticalshading{rainbow}{100bp}{
+              color(0bp)=(red); color(25bp)=(red); color(35bp)=(yellow);
+              color(45bp)=(green); color(55bp)=(cyan); color(65bp)=(blue);
+              color(75bp)=(violet); color(100bp)=(violet)
+            }
+            
+            \pgfdeclareverticalshading{blackbody}{100}{
+              rgb(0)=(0,0,0);
+              rgb(25)=(0,0,0);
+              rgb(25+50/11*1)=(1,0.0337,0);
+              rgb(25+50/11*2)=(1,0.2647,0.0033);
+              rgb(25+50/11*3)=(1,0.4870,0.1411);
+              rgb(25+50/11*4)=(1,0.6636,0.3583);
+              rgb(25+50/11*5)=(1,0.7992,0.6045);
+              rgb(25+50/11*6)=(1,0.9019,0.8473);
+              rgb(25+50/11*6.5)=(1,1,1);
+              rgb(25+50/11*7)=(0.9337,0.9150,1);
+              rgb(25+50/11*8)=(0.7874,0.8187,1);
+              rgb(25+50/11*9)=(0.6925,0.7522,1);
+              rgb(25+50/11*10)=(0.6268,0.7039,1);
+              rgb(75)=(0.3277,0.5022,1);
+              rgb(100)=(0.3277,0.5022,1)
+            }
+
+
+            
+
+
+\include{settings_epfl.tex}
+
+
+
+\let\oldAA\AA
+\renewcommand{\AA}{\text{\normalfont\oldAA}}
+
+
+%QUICK_VECTORS  https://tex.stackexchange.com/questions/200507/inline-row-vectors-with-smallmatrix
+\newcommand{\icol}[1]{% inline column vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+\newcommand{\irow}[1]{% inline row vector
+  \left(\begin{smallmatrix}#1\end{smallmatrix}\right)%
+}
+
+
+\renewcommand{\iff}{
+  \xleftrightarrow{\text{iff}}
+}
+
+\newcommand{\bk}[1]{
+  \langle {#1} \rangle
+}
+
+\renewcommand{\mod}[1]{
+  \left\lVert {#1}\right\rVert_2
+}
+
+\newcommand{\abs}[1]{
+  \left\lvert {#1} \right\rvert
+}
+
+
+
+
+
+\begin{document}
+
+
+\title{Thermodynamics}
+\subtitle{from chemistry to properties}
+\author{Ferrulli Massimiliano}  
+% SE VUOI LA COPERTINA: %
+   % \masterfrontpage
+
+\maketitle
+
+
+
+
+
+\tableofcontents
+
+
+
+
+
+\pagebreak
+
+
+
+\section{Week1}
+Z: Number of protons (protons and neutrons have roughly the same mass)\\
+A: Atomic mass \\
+\underline{Temperature:} Measures how hot / cold a sistem is, it's a state variable, it's relative and absolute temperature scales. \\
+ \underline{Relative T scales:}\\
+ Celsius: \\
+ $\cdot$ 0  $\to$  freezing point of water \\
+ $\cdot$ $ 100 \to $ boiling point of water \\
+Farhenneit: \\
+$\cdot$ $ 0 \to $ freezing point of brine \\
+$\cdot$ $ 32 \to $ freezing point of water \\
+$\cdot$ $ 98 \to $ Human body T \\
+Conversion Celsius Farhenneit: 
+$  \text{celsius} \cdot \frac{9}{5}  + 32 = \text{Farhenneit} $
+\underline{ Absolute T scales}: \\
+ Kelvin: \\
+ $\cdot$ $ 0K $ is the lowest the T goes (always positive) $ = 273.15 C $  \\
+ $\cdot$ Absolute zero: extrpolation of T of an ideal fas for zero volume \\
+\underline{Therma equilibrium (TE)}: \\
+Put two objects with different T in thermal contact $\to$ they will reach the same T said to be in thermal equilibrium. \\
+$\cdot$ \underline{0th law of TD}: \\
+if two systems are in TE with a third system, then they are in TE with each other. 
+
+
+%immagini:
+ \begin{figure}[!ht]
+   \centering
+   \subfloat[0th law of TD]{
+     \includegraphics[width=50mm]{images/0thlaw.png}
+   }
+ \end{figure}
+
+\pagebreak
+
+\subsection{Thermal Expansions}
+\underline{Linear expansion:} \\
+$$ \Delta l = \alpha l_0 \Delta T $$
+where $\alpha$ $\left[ \frac{1}{K} \right] $ is the linear thermal expansion coefficient dependent on the material. \\
+\underline{Volume expansion:} \\
+$$ \Delta V = \beta V_0 \Delta T $$
+where $\beta$ $\left[ \frac{1}{K} \right] $ is the volume thermal expansion coefficient dependent on the material. \\
+For small $\Delta T$ we can use the following formula: 
+$$V(t) = l(t)^3 = (l_o + l(t))^3 = (l_0 + \alpha l_0 \Delta T )^3 = l_0^3(1+\alpha \Delta T)^3 $$
+This formula is only usable for small $\Delta T$  \\
+\begin{align}
+  \begin{aligned}
+    V(t) & =l_0^3\left(1+3 \alpha \Delta T+3 \alpha^2 \Delta T^2+\alpha^3 \Delta T^3\right) \, , \, \left(3 \alpha^2 \Delta T^2+\alpha^3 \Delta T^3 \, \, \text{are very small} \right)  \\
+    & \approx l_0^3(1+3 \alpha \Delta T) \\
+    & =V_0+3 \alpha \Delta T V_0
+  \end{aligned}
+\end{align}
+
+\begin{align*}
+  \begin{gathered}
+    \Delta V=3 \alpha \Delta T V_0=\beta \Delta T V_0 \\
+    3 \alpha \approx \beta
+    \end{gathered}
+\end{align*}
+
+
+
+\underline{Precise formula for lenght expansion:}
+For an infinitesimaly small extension $dl$:
+\begin{align}
+  \begin{aligned}
+    & d l=\alpha l d T \\
+    & \int \frac{d l}{l}=\int \alpha d T  \\
+    & \log (l)=\alpha T+C \\
+    & l=\exp (\alpha T) \cdot C
+  \end{aligned}
+\end{align}
+with initial conditions: 
+$$ l = e^{\alpha \Delta T} \cdot l_0 $$
+
+\subsection{Thermal stress}
+Expansion of bodies: push on each other. How much is a "pushed - on " object compressed? \\
+Juong's modulus E:
+$$ \Delta l = \frac{1}{E} P l_o $$ 
+\underline{Example:} 
+
+
+
+\pagebreak
+
+
+
+\section{Allegati}
+\label{sec:allegati}
+\subsection{Dimostrazione 1}
+\label{sec:Dimostrazione 1}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 
